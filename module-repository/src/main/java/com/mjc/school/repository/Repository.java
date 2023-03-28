@@ -6,7 +6,7 @@ public interface Repository<T> {
 
     List<T> readAllNews();
 
-    T readNewsById(Long id);
+    T readByIdNews(Long id);
 
     T createNews(T data);
 

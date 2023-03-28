@@ -24,7 +24,7 @@ public class RepositoryImpl implements Repository<NewsModel> {
                 .anyMatch(news -> id.equals(news.getId()));
     }
     @Override
-    public NewsModel readNewsById(Long id) {
+    public NewsModel readByIdNews(Long id) {
         return dataSource.getNews().stream()
                 .filter(news -> id.equals(news.getId()))
                 .findFirst().get();
@@ -45,7 +45,7 @@ public class RepositoryImpl implements Repository<NewsModel> {
 
     @Override
     public NewsModel updateNews(NewsModel updateNews) {
-        NewsModel news = this.readNewsById(updateNews.getId());
+        NewsModel news = this.readByIdNews(updateNews.getId());
         news.setTitle(updateNews.getTitle());
         news.setContent(updateNews.getContent());
         news.setLastUpdateDate(updateNews.getLastUpdateDate());
@@ -56,7 +56,7 @@ public class RepositoryImpl implements Repository<NewsModel> {
     @Override
     public Boolean deleteNewsById(Long id) {
         List<NewsModel> deleteNewsById = new ArrayList<>();
-        deleteNewsById.add(readNewsById(id));
+        deleteNewsById.add(readByIdNews(id));
         return dataSource.getNews().removeAll(deleteNewsById);
     }
 }

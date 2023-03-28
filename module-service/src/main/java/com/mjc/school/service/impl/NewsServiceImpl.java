@@ -46,7 +46,7 @@ public class NewsServiceImpl implements NewsService<NewsDtoRequest, NewsDtoRespo
         public NewsDtoResponse readNewsById(Long id) {
             verification.verificationNewsId(id);
             if (newsRepository.checkNewsById(id)) {
-                NewsModel news = newsRepository.readNewsById(id);
+                NewsModel news = newsRepository.readByIdNews(id);
                 return mapper.map(news, NewsDtoResponse.class);
             } else {
                 throw new NewsNotFoundException(String.format(NewsNotFoundException.getCode(),id));
