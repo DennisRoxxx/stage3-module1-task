@@ -1,15 +1,15 @@
-package com.mjc.school.impl;
+package com.mjc.school.repository.impl;
 
 
-import com.mjc.school.DataSource;
-import com.mjc.school.model.NewsModel;
-import com.mjc.school.repository.interfaces.Repository;
+import com.mjc.school.repository.datasourse.DataSource;
+import com.mjc.school.repository.model.NewsModel;
+import com.mjc.school.repository.Repository;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class NewsRepositoryImpl implements Repository<NewsModel> {
+public class RepositoryImpl implements Repository<NewsModel> {
 
     private final DataSource dataSource = new DataSource();
 

@@ -1,8 +1,8 @@
 package com.mjc.school.service.impl;
 
-import com.mjc.school.impl.NewsRepositoryImpl;
-import com.mjc.school.model.NewsModel;
-import com.mjc.school.repository.interfaces.Repository;
+import com.mjc.school.repository.impl.RepositoryImpl;
+import com.mjc.school.repository.model.NewsModel;
+import com.mjc.school.repository.Repository;
 import com.mjc.school.service.dto.NewsDtoRequest;
 import com.mjc.school.service.dto.NewsDtoResponse;
 import com.mjc.school.service.exception.NewsNotFoundException;
@@ -31,7 +31,7 @@ public class NewsServiceImpl implements NewsService<NewsDtoRequest, NewsDtoRespo
 
         public NewsServiceImpl() {
             mapper = new ModelMapper();
-            newsRepository = new NewsRepositoryImpl();
+            newsRepository = new RepositoryImpl();
             verification = new Verification();
         }
 

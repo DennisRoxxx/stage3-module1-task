@@ -1,6 +1,7 @@
-package com.mjc.school;
-import com.mjc.school.model.AuthorModel;
-import com.mjc.school.model.NewsModel;
+package com.mjc.school.repository.datasourse;
+import com.mjc.school.repository.model.AuthorModel;
+import com.mjc.school.repository.model.NewsModel;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
